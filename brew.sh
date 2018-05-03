@@ -12,6 +12,7 @@ brew install tree
 brew install zsh
 
 # Taps
+brew tap homebrew/services
 brew tap caskroom/cask
 brew tap caskroom/fonts
 brew tap caskroom/versions
