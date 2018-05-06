@@ -10,10 +10,6 @@ brew install the_silver_searcher
 brew install tree
 brew install zsh
 
-# Quicklook plugins
-brew install qlcolorcode 
-brew install qlmarkdown
-
 # Taps
 brew tap homebrew/services
 brew tap caskroom/cask
