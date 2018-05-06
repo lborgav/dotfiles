@@ -14,6 +14,10 @@ brew cask install quicklookapk
 brew cask install suspicious-package
 
 # Apps
+brew cask install android-studio
+brew cask install atom
+brew cask install boom-3d
+brew cask install dash3
 brew cask install calibre
 brew cask install virtualbox
 brew cask install vagrant
