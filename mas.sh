@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+
+mas install 568494494 # Pocket
+mas install 403195710 # Remote Mouse
+mas install 409183694 # Keynote
+mas install 1278508951 # Trello
+mas install 414030210 # LimeChat
+mas install 441258766 # Magnet
+mas install 485812721 # TweetDeck
+mas install 682658836 # GarageBand
+mas install 407963104 # Pixelmator
+mas install 937984704 # Amphetamine
+mas install 443987910 # 1Password
+mas install 409203825 # Numbers
+mas install 410628904 # Wunderlist
+mas install 412448059 # ForkLift
+mas install 497799835 # Xcode
+mas install 409201541 # Pages
+mas install 408981434 # iMovie
+mas install 457622435 # Yoink
+mas install 445189367 # PopClip
+mas install 430255202 # Mactracker
+mas install 507257563 # Sip
