@@ -6,7 +6,7 @@ npm install -g bower
 npm install -g create-react-app
 npm install -g create-react-native-app
 npm install -g gtop
-npm install -g gulp
+npm install -g gulp-cli
 npm install -g historie
 npm install -g hotel
 npm install -g ionic
