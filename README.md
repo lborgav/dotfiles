@@ -3,7 +3,7 @@
 ## About this system
 
 This system is totally based on git.
-So, we gonna have our dotfiles and scripts always versioned in the $HOME folder.
+So, we gonna have our dotfiles and scripts always versioned in the "HOME" folder.
 
 Right now, this is mac only
 
@@ -20,6 +20,7 @@ function config {
 }
 
 mkdir -p .config-backup
+
 config checkout
 
 if [ $? = 0 ]; then
@@ -28,7 +29,10 @@ if [ $? = 0 ]; then
     echo "Backing up pre-existing dot files.";
     config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
 fi;
+
 config checkout
 config config status.showUntrackedFiles no
 
 ```
+
+Now, run **startup.sh**
