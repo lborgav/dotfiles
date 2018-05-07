@@ -3,10 +3,11 @@
 echo "###########################"
 echo "Setting up this Macbook ..."
 echo "###########################"
+
 echo
 echo "> Tell me your full name:"
 read fullname
-echo $fullname
+
 echo
 echo "> Tell me your email:"
 read email
