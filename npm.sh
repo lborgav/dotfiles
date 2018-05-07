@@ -10,6 +10,7 @@ npm install -g gulp-cli
 npm install -g historie
 npm install -g hotel
 npm install -g ionic
+npm install -g nativefier
 npm install -g node-gyp
 npm install -g nodemon
 npm install -g prettier
