@@ -60,7 +60,7 @@ nvm alias default 9
 # NPM global cli's
 echo
 echo "> Installing npm global cli's"
-#sh npm.sh
+sh npm.sh
 
 # Customize iterm
 
