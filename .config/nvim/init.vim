@@ -3,6 +3,7 @@
 "====================
 call plug#begin()
 Plug 'dracula/vim'
+Plug 'elmcast/elm-vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
@@ -100,6 +101,6 @@ augroup END
 augroup prettier_config
   autocmd!
   let g:prettier#autoformat = 0
-  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.elm PrettierAsync
 augroup END
 
