@@ -1,10 +1,11 @@
-"====================
-" Plugins
-"====================
-call plug#begin()
+"###################################################################
+"# Plugins 
+"###################################################################
+
+call plug#begin("~/.local/share/nvim/plugged")
 Plug 'dracula/vim'
-Plug 'elmcast/elm-vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'elmcast/elm-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
@@ -14,9 +15,10 @@ Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {
-\ 'do': 'yarn install',
-\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'skywind3000/asyncrun.vim'
@@ -27,16 +29,18 @@ Plug 'w0rp/ale'
 call plug#end()
 
 
-"====================
-" Maps 
-"====================
+"###################################################################
+"# Mappings 
+"###################################################################
+
 map <C-n> :NERDTreeToggle<CR>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 
-"====================
-" Config 
-"====================
+"###################################################################
+"# Config 
+"###################################################################
+
 set termguicolors 
 set number " line numbers
 set mouse=a
@@ -49,9 +53,9 @@ set background=dark
 colorscheme palenight
 
 
-"====================
-" Plugin Config 
-"====================
+"###################################################################
+"# Plugin Config 
+"###################################################################
 
 augroup airline_config
   autocmd!
@@ -101,6 +105,6 @@ augroup END
 augroup prettier_config
   autocmd!
   let g:prettier#autoformat = 0
-  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.elm PrettierAsync
+  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 augroup END
 
