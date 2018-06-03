@@ -13,7 +13,9 @@ brew install cookiecutter
 brew install coreutils
 brew install ctags
 brew install curl
+brew install diff-so-fancy
 brew install dockutil
+brew install elm
 brew install ffmpeg
 brew install gcc
 brew install git
