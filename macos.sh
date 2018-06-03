@@ -34,8 +34,9 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+# KeyRepeat and InitialKeyRepeat speed
+defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 
 ###################################################################
