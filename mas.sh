@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 mas install 568494494 # Pocket
 mas install 403195710 # Remote Mouse
 mas install 409183694 # Keynote
