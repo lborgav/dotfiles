@@ -14,40 +14,48 @@ read email
 
 echo
 echo "> Checking if exists software updates"
-#sudo softwareupdate -i -a
+sudo softwareupdate -i -a
 
 echo
 echo "> Installing command-line-tools"
-#xcode-select --install
+xcode-select --install
 
-# Set computer?!
+sudo scutil --set ComputerName "$fullname's Macbook"
+sudo scutil --set HostName "$fullname's Macbook"
 
 echo
 echo "> Setting up git user"
-#git config --global user.name $fullname
-#git config --global user.email $email
+git config --global user.name $fullname
+git config --global user.email $email
 
-# Private keys?!
+# TODO: Private keys
 
 echo
 echo "> Install Homebrew"
 # Install brew
-#/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Brewing
 echo
 echo "> Brewing apps"
-#sh brew.sh
+sh brew.sh
 
 # Cask
 echo
 echo "> Installing casks"
-#sh cask.sh
+sh cask.sh
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Vim Plug (for Neovim)
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Mac App Store app's
 echo
 echo "> Installing Mac App Store app's with mas"
-#sh mas.sh
+sh mas.sh
 
 # Set node
 echo
@@ -62,7 +70,14 @@ echo
 echo "> Installing npm global cli's"
 sh npm.sh
 
-# Customize iterm
+# TODO: Sync Alfred preferences
+echo "Sync Alfred Preferences"
+
+# TODO: Sync 1Password preferences
+echo "Sync 1Password preferences"
+
+# TODO:  iTerm theme
+echo "iTerm theme: Palenight"
 
 # Restart computer
 echo
