@@ -9,6 +9,34 @@ Right now, this is mac only
 
 _Reference: [best-way-to-store-dotfiles-git-bare-repo](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)_
 
+## Repository Structure
+
+#### Shell environment
+
+* `.aliases`
+* `.exports`
+* `.zshrc`
+
+#### Git
+
+* `.gitconfig` - Personal git preferences
+
+#### NeoVIM
+
+* `.config/nvim/init.vim`
+
+#### Command lines and Apps
+
+* `.brew` - Command line tools using Homebrew
+* `.cask` - Command line tools using Hombrew Cask
+* `.mas` - Mac App Store apps
+* `.npm-apps` - Global npm applications
+
+#### Setup
+
+* `.bootstrap-mac` - Setup my personal macbook
+* `.macos` - Personal macbook preferences
+
 ## Installing dotfiles on a new computer
 
 ```sh
