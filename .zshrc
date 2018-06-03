@@ -1,5 +1,5 @@
 # Exports
-. ~/exports.sh
+. ~/.exports
 
 ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="false"
@@ -14,7 +14,7 @@ plugins=(git docker tmux)
 . /usr/local/etc/profile.d/z.sh
 
 # Aliases
-. ~/aliases.sh
+. ~/.aliases
 
 eval "$(jenv init -)"
 

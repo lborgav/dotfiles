@@ -33,4 +33,4 @@ dotfiles checkout
 dotfiles config status.showUntrackedFiles no
 ```
 
-Now, run **startup.sh**
+Now, run **sh .bootstrap-mac**

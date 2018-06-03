@@ -38,12 +38,12 @@ echo "> Install Homebrew"
 # Brewing
 echo
 echo "> Brewing apps"
-sh brew.sh
+sh .brew
 
 # Cask
 echo
 echo "> Installing casks"
-sh cask.sh
+sh .cask
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -55,7 +55,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # Mac App Store app's
 echo
 echo "> Installing Mac App Store app's with mas"
-sh mas.sh
+sh .mas
 
 # Set node
 echo
@@ -68,7 +68,7 @@ nvm alias default 9
 # NPM global cli's
 echo
 echo "> Installing npm global cli's"
-sh npm.sh
+sh .npm-apps
 
 # TODO: Sync Alfred preferences
 echo "Sync Alfred Preferences"
@@ -78,6 +78,11 @@ echo "Sync 1Password preferences"
 
 # TODO:  iTerm theme
 echo "iTerm theme: Palenight"
+
+# Mac Os Preferences
+echo
+echo "> Setting up Mac OS Preferences"
+sh .macos
 
 # Restart computer
 echo

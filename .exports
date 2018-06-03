@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
