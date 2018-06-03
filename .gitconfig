@@ -1,0 +1,28 @@
+[user]
+	email = lborgav@gmail.com
+	name = Leonardo Borges Avelino
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	header = black normal bold
+	added = green normal bold
+	updated = green normal bold
+	changed = yellow normal bold
+	untracked = cyan normal bold
+	branch = magenta normal bold
+	nobranch = normal normal bold
+	unmerged = red normal bold
