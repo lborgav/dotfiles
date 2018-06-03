@@ -18,7 +18,9 @@ plugins=(git docker tmux)
 
 eval "$(jenv init -)"
 
-### Added by IBM Cloud CLI
-source /usr/local/Bluemix/bx/zsh_autocomplete
-
+# Node version manager
 . "/usr/local/opt/nvm/nvm.sh"
+
+# Only fot iterm integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
