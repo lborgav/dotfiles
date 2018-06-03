@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Quicklook plugins
-brew cask install betterzip
 brew cask install epubquicklook
 brew cask install provisionql
 brew cask install qlcolorcode 
@@ -11,10 +10,11 @@ brew cask install qlvideo
 brew cask install quicklook-csv
 brew cask install quicklook-json
 brew cask install quicklookapk
-brew cask install suspicious-package
 
 # Apps
+brew cask install 1password 
 brew cask install adium
+brew cask install alfred 
 brew cask install android-studio
 brew cask install atom
 brew cask install boom-3d
@@ -28,31 +28,39 @@ brew cask install dropbox
 brew cask install evernote
 brew cask install fastlane
 brew cask install firefox
+brew cask install flux
 brew cask install google-chrome
 brew cask install intellij-idea-ce
 brew cask install iterm2
 brew cask install java8
 brew cask install java9
 brew cask install kaleidoscope
+brew cask install kap
 brew cask install keybase
 brew cask install macdown
 brew cask install postman 
+brew cask install powershell
 brew cask install remote-mouse
-brew cask install skitch
 brew cask install sketch 
+brew cask install skitch
 brew cask install skype
 brew cask install slack
 brew cask install sourcetree
 brew cask install spotify
 brew cask install sublime-text
+brew cask install telegram
 brew cask install the-unarchiver
+brew cask install tower
 brew cask install vagrant
 brew cask install virtualbox
+brew cask install visual-studio
 brew cask install visual-studio-code
 brew cask install vlc
+brew cask install whatsapp
 
 # Fonts
 brew cask install font-fira-code
+brew cask install font-pt-sans
 brew cask install font-source-code-pro
 
 # Cleanup
