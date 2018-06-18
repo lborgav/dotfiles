@@ -11,7 +11,7 @@ brew install cocoapods
 brew install consul
 brew install cookiecutter
 brew install coreutils
-brew install ctags
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 brew install curl
 brew install diff-so-fancy
 brew install dockutil
