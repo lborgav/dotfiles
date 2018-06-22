@@ -23,6 +23,7 @@ brew install graphicsmagick
 brew install htop
 brew install httpie
 brew install jmeter
+brew install jq
 brew install kubernetes-cli
 brew install libpng
 brew install libxml2
