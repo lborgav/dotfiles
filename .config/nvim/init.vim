@@ -20,6 +20,7 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 Plug 'scrooloose/nerdcommenter'
+Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-fugitive'
@@ -34,22 +35,25 @@ call plug#end()
 "###################################################################
 
 map <C-n> :NERDTreeToggle<CR>
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-
+map <C-m> :TagbarToggle<CR>
+map <C-f> :Ag<Space>
 
 "###################################################################
 "# Config 
 "###################################################################
 
-set termguicolors 
-set number " line numbers
+set background=dark
+set cursorline  " highlight current line
+set expandtab
+set hidden
+set inccommand=split
 set mouse=a
-set tabstop=2
+set number " line numbers
+set relativenumber
 set shiftwidth=2
 set softtabstop=0
-set expandtab
-set cursorline  " highlight current line
-set background=dark
+set tabstop=2
+set termguicolors 
 colorscheme palenight
 
 
@@ -82,7 +86,8 @@ augroup END
 
 augroup ctrlp_config
   autocmd!
-  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|elm-stuff'
+  let g:ctrlp_max_files = 0
   let g:ctrlp_dotfiles = 1
 augroup END
 
@@ -108,3 +113,17 @@ augroup prettier_config
   autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 augroup END
 
+augroup ultisnips_config
+  autocmd!
+  let g:UltiSnipsEditSplit = 'vertical'
+  let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips'
+  let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsJumpForwardTrigger="<c-b>"
+	let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+augroup END
+
+augroup numbertoggle_config
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
