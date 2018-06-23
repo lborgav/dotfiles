@@ -1,5 +1,20 @@
-snippet fun "Simple function" b
-function ${1:name} (${2}) {
-	${3}
+snippet fun "Simple function"
+function ${1:name}($2) {
+	$0
 }
 endsnippet
+
+snippet rcc "React class" b
+class ${1:name} extends React.Component {
+	render () {
+		return (
+			<div>
+				$0
+			</div>
+		);
+	}
+}
+
+export default $1
+endsnippet
+
