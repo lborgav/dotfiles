@@ -11,6 +11,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
 Plug 'pbogut/deoplete-elm'
 Plug 'posva/vim-vue'
@@ -35,6 +36,12 @@ call plug#end()
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
 map <C-f> :Ag<Space>
+nmap <C-_> <Plug>NERDCommenterToggle
+vmap <C-_> <Plug>NERDCommenterToggle<CR>gv 
+
+" Using ctrl+j and ctrl+k when popup is visible
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 
 "###################################################################
 "# Config 
@@ -130,4 +137,9 @@ augroup numbertoggle_config
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+augroup elmvim_config
+  autocmd!
+  let g:elm_detailed_complete = 1
 augroup END
