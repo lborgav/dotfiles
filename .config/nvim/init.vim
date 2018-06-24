@@ -67,7 +67,6 @@ set softtabstop=0
 set tabstop=2
 set termguicolors
 set title " Show the filename in the window titlebar
-set t_Co=256
 colorscheme palenight
 
 
