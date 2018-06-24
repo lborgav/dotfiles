@@ -29,3 +29,8 @@ PATH=$PATH:/usr/local/sbin
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
+
+# Golang
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
