@@ -3,8 +3,10 @@
 "###################################################################
 
 call plug#begin("~/.local/share/nvim/plugged")
+Plug 'airblade/vim-gitgutter'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'elmcast/elm-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
@@ -22,10 +24,12 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 call plug#end()
 
 
@@ -38,6 +42,7 @@ map <C-m> :TagbarToggle<CR>
 map <C-f> :Ag<Space>
 nmap <C-_> <Plug>NERDCommenterToggle
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv 
+nnoremap <C-g> :GitGutterToggle<CR>
 
 " Using ctrl+j and ctrl+k when popup is visible
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
@@ -47,18 +52,22 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 "# Config 
 "###################################################################
 
+set autoread 
 set background=dark
-set cursorline  " highlight current line
-set expandtab
-set hidden
+set cursorline " Highlight current line 
+set expandtab " Expand tabs to spaces
+set hidden " When a buffer is brought to foreground, remember undo history and marks
 set inccommand=split
-set mouse=a
+set incsearch
+set mouse=a " Enable mouse in all modes
 set number " line numbers
 set relativenumber
 set shiftwidth=2
 set softtabstop=0
 set tabstop=2
-set termguicolors 
+set termguicolors
+set title " Show the filename in the window titlebar
+set t_Co=256
 colorscheme palenight
 
 
@@ -140,7 +149,3 @@ augroup numbertoggle_config
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
-augroup elmvim_config
-  autocmd!
-  let g:elm_detailed_complete = 1
-augroup END
