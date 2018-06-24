@@ -28,7 +28,7 @@ _Reference: [best-way-to-store-dotfiles-git-bare-repo](https://developer.atlassi
 #### Command lines and Apps
 
 * `.brew` - Command line tools using Homebrew
-* `.cask` - Command line tools using Hombrew Cask
+* `.cask` - Applications using Homebrew Cask
 * `.mas` - Mac App Store apps
 * `.npm-apps` - Global npm applications
 
