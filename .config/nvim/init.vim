@@ -1,5 +1,5 @@
 "###################################################################
-"# Plugins 
+"# Plugins
 "###################################################################
 
 call plug#begin("~/.local/share/nvim/plugged")
@@ -35,27 +35,32 @@ call plug#end()
 
 
 "###################################################################
-"# Mappings 
+"# Mappings
 "###################################################################
 
-map <C-n> :NERDTreeToggle<CR>
-map <C-m> :TagbarToggle<CR>
-map <C-f> :Ag<Space>
-nmap <C-_> <Plug>NERDCommenterToggle
-vmap <C-_> <Plug>NERDCommenterToggle<CR>gv 
+noremap <C-n> :NERDTreeToggle<CR>
+noremap <C-m> :TagbarToggle<CR>
+noremap <C-f> :Ag<Space>
+nnoremap <C-_> <Plug>NERDCommenterToggle
+vnoremap <C-_> <Plug>NERDCommenterToggle<CR>gv
 nnoremap <C-g> :GitGutterToggle<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+inoremap jk <esc>
+
+
 
 " Using ctrl+j and ctrl+k when popup is visible
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 
 "###################################################################
-"# Config 
+"# Config
 "###################################################################
 
-set autoread 
+set autoread
 set background=dark
-set cursorline " Highlight current line 
+set cursorline " Highlight current line
 set expandtab " Expand tabs to spaces
 set hidden " When a buffer is brought to foreground, remember undo history and marks
 set inccommand=split
@@ -72,7 +77,7 @@ colorscheme palenight
 
 
 "###################################################################
-"# Plugin Config 
+"# Plugin Config
 "###################################################################
 
 augroup airline_config
@@ -91,10 +96,10 @@ augroup END
 
 augroup ack_config
   autocmd!
-  let g:ackprg = 'ag --vimgrep --smart-case'                                                   
-  cnoreabbrev ag Ack                                                                           
-  cnoreabbrev aG Ack                                                                           
-  cnoreabbrev Ag Ack                                                                           
+  let g:ackprg = 'ag --vimgrep --smart-case'
+  cnoreabbrev ag Ack
+  cnoreabbrev aG Ack
+  cnoreabbrev Ag Ack
   cnoreabbrev AG Ack
 augroup END
 
