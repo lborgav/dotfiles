@@ -6,6 +6,8 @@ brew upgrade
 
 # Installing productivity steroids
 brew install ansible
+brew install awscli
+brew install azure-cli
 brew install ccat
 brew install cocoapods
 brew install consul
