@@ -31,6 +31,10 @@ brew cask install fastlane
 brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
+brew cask install gpg-suite
+brew cask install haskell-platform
+brew cask install imagealpha
+brew cask install imageoptim
 brew cask install intellij-idea-ce
 brew cask install iterm2
 brew cask install java8
@@ -65,6 +69,8 @@ brew cask install visual-studio
 brew cask install visual-studio-code
 brew cask install vlc
 brew cask install whatsapp
+brew cask install wireshark
+brew cask install xquartz
 
 # Fonts
 brew cask install font-fira-code
