@@ -4,6 +4,7 @@
 
 call plug#begin("~/.local/share/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-css-color'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -11,6 +12,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
+Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx'
@@ -21,6 +23,8 @@ Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
@@ -29,6 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'wellle/targets.vim'
 Plug 'w0rp/ale'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 call plug#end()
@@ -38,41 +43,56 @@ call plug#end()
 "# Mappings
 "###################################################################
 
-noremap <C-n> :NERDTreeToggle<CR>
-noremap <C-m> :TagbarToggle<CR>
-noremap <C-f> :Ag<Space>
-nnoremap <C-_> <Plug>NERDCommenterToggle
-vnoremap <C-_> <Plug>NERDCommenterToggle<CR>gv
-nnoremap <C-g> :GitGutterToggle<CR>
+noremap <c-n> :NERDTreeToggle<cr>
+noremap <c-f> :Ag<space>
+noremap <s-l> gt
+noremap <s-h> gT
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
+
+nnoremap <c-g> :GitGutterToggle<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap ; :
+nnoremap ;; :!
+nnoremap ;;o :!open .<cr>
+
 inoremap jk <esc>
+inoremap <expr> <c-j> pumvisible() ? "\<c-n>" : "\<down>"
+inoremap <expr> <c-k> pumvisible() ? "\<c-p>" : "\<up>"
 
+vnoremap jk <esc>
 
+" Abbreviations
+cab W! w!
+cab Q! q!
+cab Wq wq
+cab Wa wa
+cab wQ wq
+cab WQ wq
+cab W w
+cab Q q
 
-" Using ctrl+j and ctrl+k when popup is visible
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 
 "###################################################################
 "# Config
 "###################################################################
 
-set autoread
 set background=dark
-set cursorline " Highlight current line
-set expandtab " Expand tabs to spaces
-set hidden " When a buffer is brought to foreground, remember undo history and marks
+set clipboard+=unnamedplus
+set cursorline "Highlight current line
+set expandtab "Expand tabs to spaces
+set hidden "When a buffer is brought to foreground, remember undo history and marks
 set inccommand=split
-set incsearch
-set mouse=a " Enable mouse in all modes
-set number " line numbers
-set relativenumber
-set shiftwidth=2
-set softtabstop=0
-set tabstop=2
+set list
+set listchars=eol:¬,tab:▸-
+set mouse=a "Enable mouse in all modes
+set number "line numbers
 set termguicolors
-set title " Show the filename in the window titlebar
+set title "Show the filename in the window titlebar
+
 colorscheme palenight
 
 
@@ -148,9 +168,27 @@ augroup ultisnips_config
   let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 augroup END
 
-augroup numbertoggle_config
+augroup vimgo_config
   autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+  autocmd FileType go nnoremap <leader>d :GoDoc<cr>
+  autocmd FileType go nnoremap <leader>w :GoDocBrowser<cr>
+  autocmd FileType go nnoremap <leader>r :GoRun<cr>
+  autocmd FileType go nnoremap <leader>t :GoTest<cr>
+  autocmd FileType go nnoremap <leader>i :GoImport<space>
+augroup END
+
+
+"###################################################################
+"# Programming languages Config
+"###################################################################
+
+augroup javascript
+  autocmd!
+  autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+augroup END
+
+augroup vim 
+  autocmd!
+  autocmd FileType vim setlocal shiftwidth=2 tabstop=2
 augroup END
 
