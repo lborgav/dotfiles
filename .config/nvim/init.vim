@@ -5,6 +5,7 @@
 call plug#begin("~/.local/share/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
+Plug 'ap/vim-buftabline'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -45,8 +46,8 @@ call plug#end()
 
 noremap <c-n> :NERDTreeToggle<cr>
 noremap <c-f> :Ag<space>
-noremap <s-l> gt
-noremap <s-h> gT
+noremap <s-l> :bnext<cr>
+noremap <s-h> :bprevious<cr>
 noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
