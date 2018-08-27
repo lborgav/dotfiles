@@ -59,12 +59,11 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap ; :
 nnoremap ;; :!
 nnoremap ;;o :!open .<cr>
+nnoremap <right> <c-w>v
 
 inoremap jk <esc>
 inoremap <expr> <c-j> pumvisible() ? "\<c-n>" : "\<down>"
 inoremap <expr> <c-k> pumvisible() ? "\<c-p>" : "\<up>"
-
-vnoremap jk <esc>
 
 " Abbreviations
 cab W! w!
