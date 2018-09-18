@@ -15,7 +15,8 @@ _Reference: [best-way-to-store-dotfiles-git-bare-repo](https://developer.atlassi
 
 * `.aliases`
 * `.exports`
-* `.zshrc`
+* `.zshrc` - My ZSH config
+* `.functions` - Small utilitary shell functions
 
 #### Git
 
