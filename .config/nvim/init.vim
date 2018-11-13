@@ -45,6 +45,7 @@ call plug#end()
 "###################################################################
 
 noremap <c-n> :NERDTreeToggle<cr>
+noremap <c-b> :TagbarToggle<cr>
 noremap <c-f> :Ag<space>
 noremap <s-l> :bnext<cr>
 noremap <s-h> :bprevious<cr>
@@ -59,7 +60,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap ; :
 nnoremap ;; :!
 nnoremap ;;o :!open .<cr>
-nnoremap <right> <c-w>v
+nnoremap <right> <c-w>v<c-w>l
+nnoremap Q @@
+nnoremap Y y$
 
 inoremap jk <esc>
 inoremap <expr> <c-j> pumvisible() ? "\<c-n>" : "\<down>"
@@ -182,9 +185,15 @@ augroup END
 "# Programming languages Config
 "###################################################################
 
+augroup html
+  autocmd!
+  autocmd FileType html setlocal shiftwidth=2 tabstop=2
+augroup END
+
 augroup javascript
   autocmd!
   autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+  autocmd FileType javascript nnoremap <leader>r :!node %<cr>
 augroup END
 
 augroup css
