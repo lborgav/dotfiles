@@ -32,5 +32,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # Golang
 export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/Code/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
