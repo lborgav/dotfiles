@@ -63,6 +63,7 @@ brew install wifi-password
 brew install yarn
 brew install youtube-dl
 brew install zsh
+brew install z
 
 # Taps
 brew tap homebrew/services

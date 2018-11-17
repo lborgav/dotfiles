@@ -24,12 +24,12 @@ brew cask install chefdk
 brew cask install coderunner
 brew cask install dash3
 brew cask install docker
-brew cask install dropbox
 brew cask install eclipse-ide
 brew cask install evernote
 brew cask install fastlane
 brew cask install firefox
 brew cask install flux
+brew cask install google-backup-and-sync
 brew cask install google-chrome
 brew cask install gpg-suite
 brew cask install haskell-platform
