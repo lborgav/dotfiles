@@ -8,8 +8,8 @@
 # Disable all animations
 defaults write com.apple.finder DisableAllAnimations -bool true
 
-# Show hidden files by default
-defaults write com.apple.finder AppleShowAllFiles -bool true
+# Hide hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool false 
 
 # Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -35,8 +35,11 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # KeyRepeat and InitialKeyRepeat speed
-defaults write NSGlobalDomain KeyRepeat -int 0
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -float 10.0
+defaults write NSGlobalDomain InitialKeyRepeat -float 10.0
+
+defaults write -g KeyRepeat -float 3.0
+defaults write NSGlobalDomain KeyRepeat -float 3.0
 
 # Bluetooth
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80

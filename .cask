@@ -12,7 +12,6 @@ brew cask install quicklook-json
 brew cask install quicklookapk
 
 # Apps
-brew cask install 1password 
 brew cask install adium
 brew cask install alfred 
 brew cask install android-studio
@@ -61,11 +60,10 @@ brew cask install sublime-text
 brew cask install telegram
 brew cask install the-unarchiver
 brew cask install torbrowser
-brew cask install tower
+brew cask install tower2
 brew cask install vagrant
 brew cask install vagrant-manager
 brew cask install virtualbox
-brew cask install visual-studio
 brew cask install visual-studio-code
 brew cask install vlc
 brew cask install whatsapp
