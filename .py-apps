@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Adding Python support for neovim
+pip2 install neovim
+pip3 install neovim

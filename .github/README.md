@@ -32,6 +32,7 @@ _Reference: [best-way-to-store-dotfiles-git-bare-repo](https://developer.atlassi
 * `.cask` - Applications using Homebrew Cask
 * `.mas` - Mac App Store apps
 * `.npm-apps` - Global npm applications
+* `.py-apps` - Global python applications
 
 #### Setup
 
