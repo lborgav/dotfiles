@@ -12,7 +12,6 @@ brew cask install quicklook-json
 brew cask install quicklookapk
 
 # Apps
-brew cask install adium
 brew cask install alfred 
 brew cask install android-studio
 brew cask install atom
@@ -37,7 +36,6 @@ brew cask install imageoptim
 brew cask install intellij-idea-ce
 brew cask install iterm2
 brew cask install java8
-brew cask install java9
 brew cask install kaleidoscope
 brew cask install kap
 brew cask install keybase
@@ -72,8 +70,13 @@ brew cask install xquartz
 
 # Fonts
 brew cask install font-fira-code
+brew cask install font-fira-mono
+brew cask install font-firacode-nerd-font
+brew cask install font-firacode-nerd-font-mono
 brew cask install font-pt-sans
 brew cask install font-source-code-pro
+brew cask install font-sourcecodepro-nerd-font
+brew cask install font-sourcecodepro-nerd-font-mono
 
 # Cleanup
 brew cask cleanup
