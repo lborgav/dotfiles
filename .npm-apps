@@ -5,6 +5,7 @@ npm install -g artillery
 npm install -g bower
 npm install -g create-react-app
 npm install -g create-react-native-app
+npm install -g disk-usage
 npm install -g gtop
 npm install -g gulp-cli
 npm install -g historie
