@@ -23,7 +23,7 @@ Plug 'pbogut/deoplete-elm'
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
@@ -34,6 +34,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'wavded/vim-stylus'
 Plug 'wellle/targets.vim'
 Plug 'w0rp/ale'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
@@ -45,8 +46,8 @@ call plug#end()
 "###################################################################
 
 noremap <c-n> :NERDTreeToggle<cr>
-noremap <c-b> :TagbarToggle<cr>
-noremap <c-f> :Ag<space>
+"noremap <c-t> :TagbarToggle<cr>
+noremap <c-f> :Ack<space>
 noremap <s-l> :bnext<cr>
 noremap <s-h> :bprevious<cr>
 noremap <c-h> <c-w>h
@@ -86,7 +87,6 @@ cab Q q
 set background=dark
 set clipboard+=unnamedplus
 set cursorline "Highlight current line
-set expandtab "Expand tabs to spaces
 set hidden "When a buffer is brought to foreground, remember undo history and marks
 set inccommand=split
 set list
@@ -128,7 +128,7 @@ augroup END
 
 augroup ctrlp_config
   autocmd!
-  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|elm-stuff'
+  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|elm-stuff\|ios\|android\|vendor\|\.git'
   let g:ctrlp_max_files = 0
   let g:ctrlp_dotfiles = 1
 augroup END
@@ -158,7 +158,7 @@ augroup END
 augroup prettier_config
   autocmd!
   let g:prettier#autoformat = 0
-  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml PrettierAsync
 augroup END
 
 augroup ultisnips_config
@@ -178,31 +178,5 @@ augroup vimgo_config
   autocmd FileType go nnoremap <leader>r :GoRun<cr>
   autocmd FileType go nnoremap <leader>t :GoTest<cr>
   autocmd FileType go nnoremap <leader>i :GoImport<space>
-augroup END
-
-
-"###################################################################
-"# Programming languages Config
-"###################################################################
-
-augroup html
-  autocmd!
-  autocmd FileType html setlocal shiftwidth=2 tabstop=2
-augroup END
-
-augroup javascript
-  autocmd!
-  autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-  autocmd FileType javascript nnoremap <leader>r :!node %<cr>
-augroup END
-
-augroup css
-  autocmd!
-  autocmd FileType css setlocal shiftwidth=2 tabstop=2
-augroup END
-
-augroup vim 
-  autocmd!
-  autocmd FileType vim setlocal shiftwidth=2 tabstop=2
 augroup END
 
