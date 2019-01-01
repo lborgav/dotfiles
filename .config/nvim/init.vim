@@ -171,12 +171,3 @@ augroup ultisnips_config
   let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 augroup END
 
-augroup vimgo_config
-  autocmd!
-  autocmd FileType go nnoremap <leader>d :GoDoc<cr>
-  autocmd FileType go nnoremap <leader>w :GoDocBrowser<cr>
-  autocmd FileType go nnoremap <leader>r :GoRun<cr>
-  autocmd FileType go nnoremap <leader>t :GoTest<cr>
-  autocmd FileType go nnoremap <leader>i :GoImport<space>
-augroup END
-
