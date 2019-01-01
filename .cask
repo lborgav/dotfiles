@@ -39,6 +39,7 @@ brew cask install java8
 brew cask install kaleidoscope
 brew cask install kap
 brew cask install keybase
+brew cask install kitematic 
 brew cask install macdown
 brew cask install postman 
 brew cask install powershell
