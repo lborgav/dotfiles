@@ -6,7 +6,7 @@ CASE_SENSITIVE="false"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git docker tmux kubectl)
+plugins=(git git-auto-fetch docker tmux kubectl terraform golang)
 
 . $ZSH/oh-my-zsh.sh
 
