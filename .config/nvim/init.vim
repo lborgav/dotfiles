@@ -9,7 +9,9 @@ Plug 'ap/vim-buftabline'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'hashivim/vim-terraform' 
 Plug 'jiangmiao/auto-pairs'
+Plug 'jxnblk/vim-mdx-js'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
@@ -32,6 +34,7 @@ Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wavded/vim-stylus'
@@ -88,6 +91,7 @@ set background=dark
 set clipboard+=unnamedplus
 set cursorline "Highlight current line
 set hidden "When a buffer is brought to foreground, remember undo history and marks
+set ignorecase
 set inccommand=split
 set list
 set listchars=eol:¬,tab:▸-
@@ -114,7 +118,11 @@ augroup ale_config
   let g:ale_sign_error = '●' " Less aggressive than the default '>>'
   let g:ale_sign_warning = '.'
   let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-  let g:ale_linters = {'javascript': ['eslint']}
+  let g:ale_linters = {
+  \  'proto': ['prototool-lint'],
+  \  'javascript': ['eslint'],
+  \  'jsx': ['eslint'],
+  \}
 augroup END
 
 augroup ack_config
@@ -158,7 +166,16 @@ augroup END
 augroup prettier_config
   autocmd!
   let g:prettier#autoformat = 0
+	let g:prettier#config#parser = 'babylon'
   autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml PrettierAsync
+augroup END
+
+augroup terraform_config
+  autocmd!
+  let g:terraform_align=1
+  let g:terraform_fold_sections=1
+  let g:terraform_remap_spacebar=1
+  let g:terraform_fmt_on_save=1
 augroup END
 
 augroup ultisnips_config
