@@ -4,8 +4,11 @@
 
 call plug#begin("~/.local/share/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
+Plug 'ambv/black'
 Plug 'ap/vim-css-color'
 Plug 'ap/vim-buftabline'
+Plug 'davidhalter/jedi'
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -26,9 +29,9 @@ Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] }
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
+Plug 'shime/vim-livedown'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -49,7 +52,7 @@ call plug#end()
 "###################################################################
 
 noremap <c-n> :NERDTreeToggle<cr>
-"noremap <c-t> :TagbarToggle<cr>
+noremap <c-t> :TagbarToggle<cr>
 noremap <c-f> :Ack<space>
 noremap <s-l> :bnext<cr>
 noremap <s-h> :bprevious<cr>
@@ -57,6 +60,7 @@ noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
+noremap <c-m> <c-w>c
 
 nnoremap <c-g> :GitGutterToggle<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -120,6 +124,7 @@ augroup ale_config
   let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
   let g:ale_linters = {
   \  'proto': ['prototool-lint'],
+  \  'python': ['pylint'],
   \  'javascript': ['eslint'],
   \  'jsx': ['eslint'],
   \}
