@@ -6,19 +6,18 @@ call plug#begin("~/.local/share/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
 Plug 'ambv/black'
 Plug 'ap/vim-css-color'
-Plug 'ap/vim-buftabline'
 Plug 'davidhalter/jedi'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'flowtype/vim-flow'
 Plug 'hashivim/vim-terraform' 
 Plug 'jiangmiao/auto-pairs'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
-Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'mxw/vim-jsx'
@@ -54,8 +53,6 @@ call plug#end()
 noremap <c-n> :NERDTreeToggle<cr>
 noremap <c-t> :TagbarToggle<cr>
 noremap <c-f> :Ack<space>
-noremap <s-l> :bnext<cr>
-noremap <s-h> :bprevious<cr>
 noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
