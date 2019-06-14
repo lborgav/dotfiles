@@ -11,7 +11,6 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'flowtype/vim-flow'
 Plug 'hashivim/vim-terraform' 
 Plug 'jiangmiao/auto-pairs'
 Plug 'jxnblk/vim-mdx-js'
