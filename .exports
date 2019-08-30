@@ -34,3 +34,9 @@ export NVM_DIR="$HOME/.nvm"
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/Code/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# lesspipe
+export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
+
+# Using fd to feed fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
