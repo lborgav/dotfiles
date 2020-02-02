@@ -44,7 +44,6 @@ brew install mongodb
 brew install neovim
 brew install nmap
 brew install nomad
-brew install nvm
 brew install openssl
 brew install packer
 brew install phantomjs
@@ -68,9 +67,9 @@ brew install z
 
 # Taps
 brew tap homebrew/services
-brew tap caskroom/cask
-brew tap caskroom/fonts
-brew tap caskroom/versions
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 
 # Cleanup
 brew cleanup

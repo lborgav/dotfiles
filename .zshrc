@@ -18,11 +18,12 @@ plugins=(git git-auto-fetch docker tmux kubectl terraform golang)
 
 eval "$(jenv init -)"
 
-# Node version manager
-. "/usr/local/opt/nvm/nvm.sh"
-
 # Only fot iterm integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Functions
 . ~/.functions
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

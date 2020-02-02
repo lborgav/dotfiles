@@ -27,9 +27,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # RabbitMQ
 PATH=$PATH:/usr/local/sbin
 
-# Node version manager
-export NVM_DIR="$HOME/.nvm"
-
 # Golang
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/Code/go
@@ -40,3 +37,5 @@ export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 
 # Using fd to feed fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
+
+export PATH="$PATH:$HOME/opt/flutter/bin"

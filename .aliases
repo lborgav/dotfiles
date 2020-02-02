@@ -5,9 +5,8 @@ alias cat="ccat"
 alias vim="nvim"
 alias weather='curl -4 http://wttr.in/Sao_Paulo'
 alias moon='curl -4 http://wttr.in/Moon'
-alias dotfiles='/usr/bin/git --git-dir=${HOME}/.df/ --work-tree=${HOME}'
+alias dotfiles='git --git-dir=${HOME}/.df/ --work-tree=${HOME}'
 alias server='python -m "SimpleHTTPServer" 8000'
 alias tldr="tldr --theme ocean"
 alias python=python3
 alias pip=pip3
-alias tx=tmuxinator

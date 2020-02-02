@@ -32,4 +32,8 @@
 	process = git-lfs filter-process
 	required = true
 [commit]
-	gpgsign = true
+	gpgsign = false
+[alias]
+	unstage = reset HEAD --
+	undo = checkout --
+	rollback = reset --soft HEAD~1
