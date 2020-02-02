@@ -6,6 +6,7 @@ call plug#begin("~/.local/share/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
 Plug 'ambv/black'
 Plug 'ap/vim-css-color'
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'davidhalter/jedi'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'drewtempelmeyer/palenight.vim'
@@ -25,8 +26,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'pbogut/deoplete-elm'
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] }
+	\ 'do': 'yarn install',
+	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'shime/vim-livedown'
@@ -164,12 +165,12 @@ augroup nerdtree_config
   autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
 
-augroup prettier_config
-  autocmd!
-  let g:prettier#autoformat = 0
-	let g:prettier#config#parser = 'babylon'
-  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml PrettierAsync
-augroup END
+"augroup prettier_config
+  "autocmd!
+  "let g:prettier#autoformat = 0
+	"let g:prettier#config#parser = 'babylon'
+  "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml PrettierAsync
+"augroup END
 
 augroup terraform_config
   autocmd!
