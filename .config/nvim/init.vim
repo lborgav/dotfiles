@@ -4,7 +4,7 @@
 
 call plug#begin("~/.local/share/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
-Plug 'ambv/black'
+"Plug 'ambv/black'
 Plug 'ap/vim-css-color'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'davidhalter/jedi'
@@ -14,6 +14,8 @@ Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform' 
 Plug 'jiangmiao/auto-pairs'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
@@ -55,6 +57,7 @@ noremap <c-t> :TagbarToggle<cr>
 noremap <c-f> :Ack<space>
 noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
+noremap <c-p> :Files<cr>
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 noremap <c-m> <c-w>c
@@ -130,18 +133,21 @@ augroup END
 augroup ack_config
   autocmd!
   let g:ackprg = 'ag --vimgrep --smart-case'
+	if executable('rg')
+		let g:ackprg = 'rg --vimgrep --no-heading'
+	endif
   cnoreabbrev ag Ack
   cnoreabbrev aG Ack
   cnoreabbrev Ag Ack
   cnoreabbrev AG Ack
 augroup END
 
-augroup ctrlp_config
-  autocmd!
-  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|elm-stuff\|ios\|android\|vendor\|\.git'
-  let g:ctrlp_max_files = 0
-  let g:ctrlp_dotfiles = 1
-augroup END
+"augroup ctrlp_config
+  "autocmd!
+  "let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|elm-stuff\|ios\|android\|vendor\|\.git'
+  "let g:ctrlp_max_files = 0
+  "let g:ctrlp_dotfiles = 1
+"augroup END
 
 augroup emmet_config
   autocmd!
