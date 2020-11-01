@@ -1,10 +1,11 @@
 [user]
 	email = lborgav@gmail.com
 	name = Leonardo Borges Avelino
-	signingKey = 5C8ABAE7407533556855CCA272DEB6105C29DC2C
+	signingkey = 72DEB6105C29DC2C
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	ui = true
+	excludesfile = /Users/lborgav/.gitignore_global
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -32,8 +33,23 @@
 	process = git-lfs filter-process
 	required = true
 [commit]
-	gpgsign = false
+	gpgsign = true
+	template = /Users/lborgav/.stCommitMsg
 [alias]
 	unstage = reset HEAD --
 	undo = checkout --
 	rollback = reset --soft HEAD~1
+[gpg]
+	program = gpg
+[url "ssh://git@git.a.com:"]
+        insteadOf = https://git.a.com
+[url "git@github.com:estrategiahq"]
+	insteadOf = https://github.com/estrategiahq
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
