@@ -56,7 +56,7 @@ noremap <c-t> :TagbarToggle<cr>
 noremap <c-f> :Ack<space>
 noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
-noremap <c-p> :Files<cr>
+noremap <c-p> :Filesf<cr>
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 noremap <c-m> <c-w>c
@@ -117,6 +117,8 @@ colorscheme palenight
 "###################################################################
 "# Plugin Config
 "###################################################################
+
+command! -bang -nargs=? -complete=dir Filesf call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>1)
 
 augroup airline_config
   autocmd!
@@ -199,6 +201,7 @@ augroup END
 augroup cpp_config
 	nnoremap <leader>c :!g++ %<cr>
 	autocmd BufNewFile *.cpp -r ~/Code/cp/templates/template.cpp
+	autocmd FileType cpp nnoremap <leader>c :!g++ --std=c++17 % -o %:r<CR>
 augroup END
 
 augroup dart_config
