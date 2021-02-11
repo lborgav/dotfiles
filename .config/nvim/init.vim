@@ -10,6 +10,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'hashivim/vim-terraform' 
 Plug 'jiangmiao/auto-pairs'
 Plug '/usr/local/opt/fzf'
@@ -24,8 +25,8 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {
-	\ 'do': 'yarn install',
-	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sebdah/vim-delve'
@@ -33,6 +34,7 @@ Plug 'shime/vim-livedown'
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'SirVer/ultisnips'
+Plug 'sotte/presenting.vim'
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'thosakwe/vim-flutter'
 Plug 'tpope/vim-surround'
@@ -104,6 +106,7 @@ set mouse=a "Enable mouse in all modes
 set termguicolors
 set title "Show the filename in the window titlebar
 set number relativenumber
+set noswapfile
 
 augroup numbertoggle
   autocmd!
@@ -118,7 +121,7 @@ colorscheme palenight
 "# Plugin Config
 "###################################################################
 
-command! -bang -nargs=? -complete=dir Filesf call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>1)
+command! -bang -nargs=? -complete=dir Filesf call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'bat {}']}, <bang>1)
 
 augroup airline_config
   autocmd!
@@ -142,9 +145,9 @@ augroup END
 augroup ack_config
   autocmd!
   let g:ackprg = 'ag --vimgrep --smart-case'
-	if executable('rg')
-		let g:ackprg = 'rg --vimgrep --no-heading'
-	endif
+  if executable('rg')
+    let g:ackprg = 'rg --vimgrep --no-heading'
+  endif
   cnoreabbrev ag Ack
   cnoreabbrev aG Ack
   cnoreabbrev Ag Ack
@@ -174,10 +177,10 @@ augroup nerdtree_config
 augroup END
 
 augroup prettier_config
-	autocmd!
-	let g:prettier#autoformat = 0
-	let g:prettier#config#parser = 'babylon'
-	autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml PrettierAsync
+  autocmd!
+  let g:prettier#autoformat = 0
+  let g:prettier#config#parser = 'babylon'
+  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml PrettierAsync
 augroup END
 
 augroup terraform_config
@@ -199,9 +202,24 @@ augroup ultisnips_config
 augroup END
 
 augroup cpp_config
-	nnoremap <leader>c :!g++ %<cr>
-	autocmd BufNewFile *.cpp -r ~/Code/cp/templates/template.cpp
-	autocmd FileType cpp nnoremap <leader>c :!g++ --std=c++17 % -o %:r<CR>
+  nnoremap <leader>c :!g++ %<cr>
+  autocmd BufNewFile *.cpp -r ~/Code/cp/templates/template.cpp
+  autocmd FileType cpp nnoremap <leader>c :!g++ --std=c++17 % -o %:r<CR>
+augroup END
+
+augroup html_config
+  autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
+augroup END
+
+augroup js_config
+  autocmd FileType js setlocal expandtab shiftwidth=2 tabstop=2
+  autocmd FileType vue setlocal expandtab shiftwidth=2 tabstop=2
+  autocmd FileType jsx setlocal expandtab shiftwidth=2 tabstop=2
+  autocmd FileType javascript.jsx setlocal expandtab shiftwidth=2 tabstop=2
+augroup END
+
+augroup vim_config
+  autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=2
 augroup END
 
 augroup dart_config
@@ -209,8 +227,8 @@ augroup dart_config
 augroup END
 
 augroup vim_go_config
-	autocmd!
-	let g:go_def_mapping_enabled = 0
+  autocmd!
+  let g:go_def_mapping_enabled = 0
 augroup END
 
 " -------------------------------------------------------------------------------------------------
