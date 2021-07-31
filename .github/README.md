@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/XW6tppE.png" title="source: imgur.com" />
+# . files
 
 ## About this system
 
