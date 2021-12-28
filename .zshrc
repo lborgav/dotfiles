@@ -11,7 +11,7 @@ plugins=(git git-auto-fetch docker tmux kubectl terraform golang aws)
 . $ZSH/oh-my-zsh.sh
 
 # z jump
-. /usr/local/etc/profile.d/z.sh
+. /opt/homebrew/etc/profile.d/z.sh
 
 # Aliases
 . ~/.aliases
@@ -32,3 +32,7 @@ export NVM_DIR="$HOME/.nvm"
 fpath=(/opt/vagrant/embedded/gems/2.2.10/gems/vagrant-2.2.10/contrib/zsh $fpath)
 compinit
 # <<<<  Vagrant command completion (end)
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
