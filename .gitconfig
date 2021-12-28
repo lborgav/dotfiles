@@ -33,7 +33,7 @@
 	process = git-lfs filter-process
 	required = true
 [commit]
-	gpgsign = false
+	gpgsign = true
 	template = /Users/lborgav/.stCommitMsg
 [alias]
 	unstage = reset HEAD --
@@ -41,18 +41,10 @@
 	rollback = reset --soft HEAD~1
 [gpg]
 	program = gpg
-[url "ssh://git@git.a.com:"]
-        insteadOf = https://git.a.com
-[url "git@github.com:estrategiahq"]
-	insteadOf = https://github.com/estrategiahq
+[url "git@github.com:olaisaac"]
+	insteadOf = https://github.com/olaisaac
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [init]
 	defaultBranch = main
 [pull]
