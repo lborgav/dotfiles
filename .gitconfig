@@ -41,11 +41,15 @@
 	rollback = reset --soft HEAD~1
 [gpg]
 	program = gpg
-[url "git@github.com:olaisaac"]
-	insteadOf = https://github.com/olaisaac
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[url "git@github.com:olaisaac"]
+	insteadOf = https://github.com/olaisaac
 [init]
 	defaultBranch = main
 [pull]
 	rebase = false
+[http]
+	sslVerify = false
+[url "git@github.com:OlaIsaac"]
+	insteadOf = https://github.com/OlaIsaac

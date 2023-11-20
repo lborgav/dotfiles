@@ -2,10 +2,14 @@
 
 alias dot="dotfiles"
 alias cat="bat"
+alias ls="eza"
 alias vim="nvim"
 alias ag="rg"
+alias lg="lazygit"
+alias ld="lazydocker"
 alias weather='curl -4 http://wttr.in/Sao_Paulo'
 alias moon='curl -4 http://wttr.in/Moon'
 alias dotfiles='git --git-dir=${HOME}/.df/ --work-tree=${HOME}'
-alias server='python -m "SimpleHTTPServer" 8000'
-alias tldr="tldr --theme ocean"
+alias server='python3 -m "http.server" 8000'
+alias antlr4='java -jar /usr/local/lib/antlr-4.10.1-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
