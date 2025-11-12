@@ -52,38 +52,6 @@ Then reload your shell:
 source ~/.zshrc
 ```
 
-### Manual installation
-
-If you prefer to install manually or want to understand what happens:
-
-```sh
-git clone --bare https://github.com/lborgav/dotfiles.git "$HOME/.df"
-
-function dotfiles {
-  echo -e "\033[1;33m[⚠️  DOTFILES]\033[0m Using repo in \$HOME/.df" >&2
-  echo "" >&2
-  /usr/bin/git --git-dir=$HOME/.df/ --work-tree="$HOME" "$@";
-  echo "" >&2
-}
-
-mkdir -p .dotfiles-backup
-
-conflicts=$(dotfiles checkout 2>&1 | egrep "\s+\." | awk '{print $1}')
-
-if [ -n "$conflicts" ]; then
-  echo "⚠️  Conflicts founded. Copying conflicted files to backup..."
-  echo "$conflicts" | while read -r file; do
-    mkdir -p "$HOME/.dotfiles-backup/$(dirname "$file")"
-    cp "$HOME/$file" "$HOME/.dotfiles-backup/$file"
-  done
-fi
-
-dotfiles checkout
-dotfiles config status.showUntrackedFiles no
-
-echo "✅ Dotfiles installed!"
-```
-
 ## Post-installation
 
 After installing dotfiles, you can optionally run the bootstrap script to install packages and configure macOS preferences:
