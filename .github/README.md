@@ -41,6 +41,21 @@ _Reference: [best-way-to-store-dotfiles-git-bare-repo](https://developer.atlassi
 
 ## Installing dotfiles on a new computer
 
+### Quick install (one-liner)
+
+```sh
+curl -sSL https://raw.githubusercontent.com/lborgav/dotfiles/master/install.sh | bash
+```
+
+Then reload your shell:
+```sh
+source ~/.zshrc
+```
+
+### Manual installation
+
+If you prefer to install manually or want to understand what happens:
+
 ```sh
 git clone --bare https://github.com/lborgav/dotfiles.git "$HOME/.df"
 
@@ -69,4 +84,10 @@ dotfiles config status.showUntrackedFiles no
 echo "✅ Dotfiles installed!"
 ```
 
-Now, run **sh .bootstrap-mac**
+## Post-installation
+
+After installing dotfiles, you can optionally run the bootstrap script to install packages and configure macOS preferences:
+
+```sh
+sh ~/.bootstrap-mac
+```
