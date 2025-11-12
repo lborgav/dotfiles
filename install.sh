@@ -34,7 +34,7 @@ echo -e "$PREFIX_INFO Checking for conflicts..."
 conflicts=$(dotfiles checkout 2>&1 | egrep "\s+\." | awk '{print $1}')
 
 if [ -n "$conflicts" ]; then
-  echo -e "$PREFIX_WARN Conflicts found. Moving conflicted files to backup..."
+  echo -e "$PREFIX_WARN Conflicts found. Moving conflicted files to backup ..."
   echo "$conflicts" | while read -r file; do
     mkdir -p "$HOME/.dotfiles-backup/$(dirname "$file")"
     mv "$HOME/$file" "$HOME/.dotfiles-backup/$file"
